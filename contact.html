@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - NeuraLoft</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <div class="logo">NeuraLoft</div>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="mobile-toggle" id="mobileToggle">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="section" style="padding-top: 7rem;">
+    <div class="section-inner">
+      <div class="section-header">
+        <h1 class="section-title">Let's Connect</h1>
+        <p class="section-subtitle">
+          Share a bit about your idea, and we’ll get back to you with next steps, timelines, and a clear project plan.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-item">
+          <h3 style="color: var(--white); margin-bottom: 0.5rem;">📧 Email</h3>
+          <p style="color: var(--gray-300);">
+            <a href="mailto:neuraloft@gmail.com">neuraloft@gmail.com</a>
+          </p>
+        </div>
+        <div class="contact-item">
+          <h3 style="color: var(--white); margin-bottom: 0.5rem;">📱 WhatsApp</h3>
+          <p style="color: var(--gray-300);">
+            <a href="https://wa.me/923432817289" target="_blank">+92&nbsp;343&nbsp;2817289</a>
+          </p>
+        </div>
+        <div class="contact-item">
+          <h3 style="color: var(--white); margin-bottom: 0.5rem;">💼 LinkedIn</h3>
+          <p>
+            <a href="https://linkedin.com/company/neuraloft" style="color: var(--accent);" target="_blank">
+              Message us on LinkedIn →
+            </a>
+          </p>
+        </div>
+        <div class="contact-item">
+          <h3 style="color: var(--white); margin-bottom: 0.5rem;">🌍 Location</h3>
+          <p style="color: var(--gray-300);">
+            Remote-first studio · Working with clients worldwide
+          </p>
+        </div>
+      </div>
+
+      <div style="margin-top: 2rem; max-width: 640px; margin-left: auto; margin-right: auto;">
+        <h2 style="margin-bottom: 1.2rem; color: var(--white); text-align: center; font-size: 1.4rem;">Send a Project Brief</h2>
+        <!-- Replace YOUR_FORM_ID with your Formspree ID when you create it -->
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="text-align: left;">
+          <input type="text" name="name" placeholder="Your Name" required
+                 style="width: 100%; padding: 0.9rem 1rem; margin-bottom: 0.9rem; background: rgba(15,23,42,0.96); border: 1px solid rgba(148,163,184,0.55); border-radius: 10px; color: var(--white);">
+          <input type="email" name="email" placeholder="Your Email" required
+                 style="width: 100%; padding: 0.9rem 1rem; margin-bottom: 0.9rem; background: rgba(15,23,42,0.96); border: 1px solid rgba(148,163,184,0.55); border-radius: 10px; color: var(--white);">
+          <input type="text" name="company" placeholder="Company / Brand (optional)"
+                 style="width: 100%; padding: 0.9rem 1rem; margin-bottom: 0.9rem; background: rgba(15,23,42,0.96); border: 1px solid rgba(148,163,184,0.55); border-radius: 10px; color: var(--white);">
+          <textarea name="project" placeholder="Tell us about your project, goals, and timeline" rows="5" required
+                    style="width: 100%; padding: 0.9rem 1rem; margin-bottom: 1rem; background: rgba(15,23,42,0.96); border: 1px solid rgba(148,163,184,0.55); border-radius: 10px; color: var(--white); resize: vertical;"></textarea>
+          <button type="submit" class="cta-button" style="width: 100%; border: none; cursor: pointer;">Submit</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 NeuraLoft. All rights reserved.</p>
+    <p>Contact: <a href="mailto:neuraloft@gmail.com">neuraloft@gmail.com</a> · WhatsApp: <a href="https://wa.me/923432817289">+92&nbsp;343&nbsp;2817289</a></p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
