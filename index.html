@@ -6,47 +6,47 @@
   <title>Neuraloft - AI-Powered Software Solutions</title>
 
   <!-- Primary SEO meta -->
-  <meta name="description" content="NeuraLoft - AI-powered software solutions for startups. MVP development in 4 weeks.">
-  <meta name="keywords" content="AI software development, MVP development, startup solutions, web development, mobile app development">
+  <link rel="canonical" href="https://neuraloft.vercel.app/" />
+  <meta name="description" content="NeuraLoft - AI-powered software solutions for startups. MVP development in 4 weeks." />
+  <meta name="keywords" content="AI software development, MVP development, startup solutions, web development, mobile app development" />
 
-  <!-- keep your existing SEO/meta and assets -->
-  <link rel="canonical" href="https://neuraloft.example/" />
+  <!-- Open Graph / Social Meta -->
   <meta property="og:title" content="Neuraloft — AI-Powered Software Solutions" />
   <meta property="og:description" content="Neuraloft builds fast, intelligent digital products — web, mobile & AI automation." />
-  <meta property="og:image" content="/img/banner.png" />
+  <meta property="og:image" content="https://neuraloft.vercel.app/img/banner.png" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" as="style" />
+  <!-- Preload Fonts & Images -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+  </noscript>
   <link rel="preload" href="/img/banner.png" as="image" />
 
+  <!-- Favicon / Apple Touch Icon -->
   <link rel="icon" href="/assets/favicon.ico" sizes="any" />
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
   <meta name="theme-color" content="#000000" />
 
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3MFEC1DTSE"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3MFEC1DTSE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3MFEC1DTSE');
+  </script>
 
-  gtag('config', 'G-3MFEC1DTSE');
-</script>
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="/css/style.css" />
 
-
-  <!-- Fonts & CSS -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
-
-  <!-- Tiny overrides to tighten spacing and create square hero image -->
+  <!-- Tiny CSS tweaks for hero & nav -->
   <style>
     :root {
-      /* make nav slightly shorter and consistent */
       --nav-height: 64px;
     }
 
-    /* Reduce top padding that pushed hero content far down */
     body { padding-top: var(--nav-height); }
 
     nav {
@@ -54,36 +54,33 @@
       padding: 0.6rem 4%;
     }
 
-    /* Make nav-container use the full available inline height and align items center */
     .nav-container {
       align-items: center;
       gap: 0.5rem;
     }
 
-    /* tighten the gap between columns in the hero */
     .hero {
-      padding-top: calc(var(--nav-height) + 1.25rem); /* much closer to nav now */
-    }
-    .hero-inner {
-      gap: 2rem; /* reduce horizontal spacing */
-      align-items: start; /* keep text aligned a bit higher */
-      grid-template-columns: 1fr 480px; /* keep hero image a fixed, balanced width on desktop */
+      padding-top: calc(var(--nav-height) + 1.25rem);
     }
 
-    /* Make the hero visual a perfect square with sharp corners */
+    .hero-inner {
+      gap: 2rem;
+      align-items: start;
+      grid-template-columns: 1fr 480px;
+    }
+
     .hero-visual {
-      border-radius: 0;              /* remove rounded corners */
+      border-radius: 0;
       overflow: hidden;
       max-width: 480px;
       width: 100%;
-      aspect-ratio: 1 / 1;          /* ensure square */
+      aspect-ratio: 1 / 1;
       height: auto;
       box-shadow: 0 18px 36px rgba(0,0,0,0.45);
       border: 1px solid var(--gray-800);
-      margin-left: auto;            /* push image to the right */
+      margin-left: auto;
     }
 
-    /* Ensure the image fills the square and stays crisp */
     .hero-visual img {
       width: 100%;
       height: 100%;
@@ -92,14 +89,12 @@
       border-radius: 0;
     }
 
-    /* Slightly reduce hero title spacing so text block is tighter */
     .hero-content h1 { margin-bottom: 0.6rem; }
     .hero-subtitle { margin-bottom: 1.25rem; max-width: 540px; }
 
-    /* Ensure on smaller screens the grid stacks and image keeps square aspect */
     @media (max-width: 900px) {
       .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 1.5rem; }
-      .hero-visual { max-width: 100%; aspect-ratio: 16/9; /* more natural on small screens */ border-radius: 12px; }
+      .hero-visual { max-width: 100%; aspect-ratio: 16/9; border-radius: 12px; }
       .hero { padding-top: calc(var(--nav-height) + 1rem); }
     }
 
@@ -109,6 +104,7 @@
     }
   </style>
 </head>
+
 
 <body>
   <!-- Skip link for keyboard users -->
