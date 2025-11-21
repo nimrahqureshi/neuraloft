@@ -1,119 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services - NeuraLoft</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services - Neuraloft</title>
+
+  <!-- SEO & Social -->
+  <meta name="description" content="Neuraloft — From prototype to production, we build web & mobile apps, AI integrations, automation and design systems for startups and companies worldwide." />
+  <link rel="canonical" href="https://neuraloft.example/services.html" />
+  <meta property="og:title" content="Neuraloft — Services" />
+  <meta property="og:description" content="MVP & Product Development, AI & Automation, Web & Mobile apps, UI/UX and Technical Consulting." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+
+  <!-- Performance: preload critical font -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" as="style" />
+
+  <!-- Favicon / mobile -->
+  <link rel="icon" href="/assets/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <meta name="theme-color" content="#000000" />
+
+  <!-- Fonts & CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+  <!-- Skip link for keyboard users -->
+  <a class="skip-link" href="#main" style="position:absolute;left:-999px;top:auto;z-index:10000;">Skip to main content</a>
+
   <nav>
     <div class="nav-container">
-      <div class="logo">NeuraLoft</div>
+      <!-- Use SVG for crisp logo with PNG fallback; add srcset for retina -->
+      <img
+        src="assets/logo.svg"
+        onerror="this.onerror=null; this.src='assets/logo.png';"
+        srcset="assets/logo.png 1x, assets/logo@2x.png 2x"
+        width="40"
+        height="40"
+        alt="Neuraloft logo"
+        class="nav-logo"
+      />
+      <div class="logo">Neuraloft</div>
+
       <ul class="nav-menu" id="navMenu">
         <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="services.html" class="nav-link" aria-current="page">Services</a></li>
         <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
-      <button class="mobile-toggle" id="mobileToggle">
+
+      <!-- Mobile toggle with ARIA attributes -->
+      <button
+        class="mobile-toggle"
+        id="mobileToggle"
+        aria-controls="navMenu"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <section class="section" style="padding-top: 7rem;">
-    <div class="section-inner">
-      <div class="section-header">
-        <h1 class="section-title">Our Services</h1>
-        <p class="section-subtitle">
-          From the first prototype to production-ready systems, NeuraLoft helps you design, build, and scale modern software products.
-        </p>
-      </div>
-
-      <div class="card-grid" style="margin-bottom: 3rem;">
-        <div class="card">
-          <h3 style="color: var(--white); margin-bottom: 0.6rem;">🚀 MVP &amp; Product Development</h3>
-          <p style="color: var(--gray-300); font-size: 0.95rem;">
-            End‑to‑end MVPs and full products for startups and teams. We focus on the smallest set of features that deliver real value fast.
-          </p>
-        </div>
-        <div class="card">
-          <h3 style="color: var(--white); margin-bottom: 0.6rem;">🤖 AI &amp; Automation</h3>
-          <p style="color: var(--gray-300); font-size: 0.95rem;">
-            Custom AI agents, chatbots, and workflow automation to reduce manual work, improve support, and unlock new capabilities.
-          </p>
-        </div>
-        <div class="card">
-          <h3 style="color: var(--white); margin-bottom: 0.6rem;">💻 Web Applications</h3>
-          <p style="color: var(--gray-300); font-size: 0.95rem;">
-            Secure, scalable web apps built with modern stacks (React, Next.js, Node.js, Python) and best practices for performance.
-          </p>
-        </div>
-        <div class="card">
-          <h3 style="color: var(--white); margin-bottom: 0.6rem;">📱 Mobile Apps</h3>
-          <p style="color: var(--gray-300); font-size: 0.95rem;">
-            Cross‑platform apps using Flutter / React Native — one codebase, consistent experience on both iOS and Android.
-          </p>
-        </div>
-        <div class="card">
-          <h3 style="color: var(--white); margin-bottom: 0.6rem;">🎨 UI/UX &amp; Design Systems</h3>
-          <p style="color: var(--gray-300); font-size: 0.95rem;">
-            Interfaces that are clean, modern, and easy to use. We design with Figma and create reusable systems for future growth.
-          </p>
-        </div>
-        <div class="card">
-          <h3 style="color: var(--white); margin-bottom: 0.6rem;">🔍 Technical Consulting</h3>
-          <p style="color: var(--gray-300); font-size: 0.95rem;">
-            Architecture reviews, technology choices, and audits of existing systems to help you make confident technical decisions.
-          </p>
-        </div>
-      </div>
-
-      <div class="faq-section">
-        <div class="section-header" style="margin-bottom: 1.75rem;">
-          <h2 class="section-title" style="font-size: 1.6rem;">Frequently Asked Questions</h2>
+  <!-- Main content -->
+  <main id="main">
+    <section class="section" style="padding-top: 7rem;">
+      <div class="section-inner">
+        <div class="section-header">
+          <h1 class="section-title">Our Services</h1>
           <p class="section-subtitle">
-            Answers to common questions about how we work and what to expect when you partner with NeuraLoft.
+            From the first prototype to production-ready systems, Neuraloft helps you design, build, and scale modern software products.
           </p>
         </div>
 
-        <div class="faq-grid">
-          <div class="faq-item">
-            <h3 class="faq-question">What types of projects do you take on?</h3>
-            <p class="faq-answer">
-              We focus on web and mobile applications, AI integrations, automation tools, and high‑impact websites. If your project involves software that supports a real business outcome, we can likely help.
+        <div class="card-grid" style="margin-bottom: 3rem;">
+          <div class="card">
+            <h3 style="color: var(--white); margin-bottom: 0.6rem;">🚀 MVP &amp; Product Development</h3>
+            <p style="color: var(--gray-300); font-size: 0.95rem;">
+              End-to-end MVPs and full products for startups and teams. We focus on the smallest set of features that deliver real value fast.
             </p>
           </div>
-          <div class="faq-item">
-            <h3 class="faq-question">How does the project process work?</h3>
-            <p class="faq-answer">
-              We typically start with a discovery call, then share a written proposal with scope, timeline, and fixed price. After approval and deposit, we move through design, development, and launch with regular check‑ins.
+          <div class="card">
+            <h3 style="color: var(--white); margin-bottom: 0.6rem;">🤖 AI &amp; Automation</h3>
+            <p style="color: var(--gray-300); font-size: 0.95rem;">
+              Custom AI agents, chatbots, and workflow automation to reduce manual work, improve support, and unlock new capabilities.
             </p>
           </div>
-          <div class="faq-item">
-            <h3 class="faq-question">Do you work with clients outside of Pakistan?</h3>
-            <p class="faq-answer">
-              Yes. NeuraLoft is remote‑first and works with clients worldwide. We use tools like Zoom, Slack, and email to keep communication clear and organized across time zones.
+          <div class="card">
+            <h3 style="color: var(--white); margin-bottom: 0.6rem;">💻 Web Applications</h3>
+            <p style="color: var(--gray-300); font-size: 0.95rem;">
+              Secure, scalable web apps built with modern stacks (React, Next.js, Node.js, Python) and best practices for performance.
             </p>
           </div>
-          <div class="faq-item">
-            <h3 class="faq-question">What is a typical project timeline?</h3>
-            <p class="faq-answer">
-              Simple landing pages: 1–2 weeks. Small websites: 2–3 weeks. MVP web apps: 4–8 weeks. Larger platforms or complex AI work can take longer depending on scope.
+          <div class="card">
+            <h3 style="color: var(--white); margin-bottom: 0.6rem;">📱 Mobile Apps</h3>
+            <p style="color: var(--gray-300); font-size: 0.95rem;">
+              Cross-platform apps using Flutter / React Native — one codebase, consistent experience on both iOS and Android.
+            </p>
+          </div>
+          <div class="card">
+            <h3 style="color: var(--white); margin-bottom: 0.6rem;">🎨 UI/UX &amp; Design Systems</h3>
+            <p style="color: var(--gray-300); font-size: 0.95rem;">
+              Interfaces that are clean, modern, and easy to use. We design with Figma and create reusable systems for future growth.
+            </p>
+          </div>
+          <div class="card">
+            <h3 style="color: var(--white); margin-bottom: 0.6rem;">🔍 Technical Consulting</h3>
+            <p style="color: var(--gray-300); font-size: 0.95rem;">
+              Architecture reviews, technology choices, and audits of existing systems to help you make confident technical decisions.
             </p>
           </div>
         </div>
+
+        <div class="faq-section">
+          <div class="section-header" style="margin-bottom: 1.75rem;">
+            <h2 class="section-title" style="font-size: 1.6rem;">Frequently Asked Questions</h2>
+            <p class="section-subtitle">
+              Answers to common questions about how we work and what to expect when you partner with Neuraloft.
+            </p>
+          </div>
+
+          <div class="faq-grid">
+            <div class="faq-item">
+              <h3 class="faq-question">What types of projects do you take on?</h3>
+              <p class="faq-answer">
+                We focus on web and mobile applications, AI integrations, automation tools, and high-impact websites. If your project involves software that supports a real business outcome, we can likely help.
+              </p>
+            </div>
+            <div class="faq-item">
+              <h3 class="faq-question">How does the project process work?</h3>
+              <p class="faq-answer">
+                We typically start with a discovery call, then share a written proposal with scope, timeline, and fixed price. After approval and deposit, we move through design, development, and launch with regular check-ins.
+              </p>
+            </div>
+            <div class="faq-item">
+              <h3 class="faq-question">Do you work with clients outside of Pakistan?</h3>
+              <p class="faq-answer">
+                Yes. Neuraloft is remote-first and works with clients worldwide. We use tools like Zoom, Slack, and email to keep communication clear and organized across time zones.
+              </p>
+            </div>
+            <div class="faq-item">
+              <h3 class="faq-question">What is a typical project timeline?</h3>
+              <p class="faq-answer">
+                Simple landing pages: 1–2 weeks. Small websites: 2–3 weeks. MVP web apps: 4–8 weeks. Larger platforms or complex AI work can take longer depending on scope.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer>
-    <p>© 2025 NeuraLoft. All rights reserved.</p>
-    <p>Contact: <a href="mailto:neuraloft@gmail.com">neuraloft@gmail.com</a> · WhatsApp: <a href="https://wa.me/923432817289">+92&nbsp;343&nbsp;2817289</a></p>
+    <p>© 2025 Neuraloft. All rights reserved.</p>
+    <p>Contact: <a href="mailto:neuraloft@gmail.com">neuraloft@gmail.com</a> · WhatsApp: <a href="https://wa.me/923432817289" rel="noopener noreferrer">+92&nbsp;343&nbsp;2817289</a></p>
   </footer>
 
-  <script src="js/main.js"></script>
+  <!-- defer so DOM is ready when main.js executes -->
+  <script src="js/main.js" defer></script>
 </body>
 </html>
