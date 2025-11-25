@@ -3,31 +3,72 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Neuraloft - AI-Powered Software Solutions</title>
-
-  <!-- Primary SEO meta -->
+  <title>Neuraloft - AI-Powered Software & Video Studio</title>
+  <meta name="description" content="Neuraloft builds AI apps, web/mobile products, automation, and professional video ads. Freelance solutions for Upwork, Fiverr & LinkedIn clients." />
   <link rel="canonical" href="https://neuraloft.vercel.app/" />
-  <meta name="description" content="NeuraLoft - AI-powered software solutions for startups. MVP development in 4 weeks." />
-  <meta name="keywords" content="AI software development, MVP development, startup solutions, web development, mobile app development" />
 
-  <!-- Open Graph / Social Meta -->
-  <meta property="og:title" content="Neuraloft — AI-Powered Software Solutions" />
-  <meta property="og:description" content="Neuraloft builds fast, intelligent digital products — web, mobile & AI automation." />
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Neuraloft — AI, Software & Video Studio" />
+  <meta property="og:description" content="AI apps · Web/Mobile · Automation · Pro Video Editing & Ads (CapCut). Freelance solutions for startups & clients." />
   <meta property="og:image" content="https://neuraloft.vercel.app/img/banner.png" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Preload Fonts & Images -->
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
-  </noscript>
-  <link rel="preload" href="/img/banner.png" as="image" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
 
-  <!-- Favicon / Apple Touch Icon -->
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/chatbot.css" />
+
+  <!-- Favicon -->
   <link rel="icon" href="/assets/favicon.ico" sizes="any" />
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
   <meta name="theme-color" content="#000000" />
+
+  <!-- Tiny hero & nav tweaks -->
+  <style>
+    :root { --nav-height: 70px; }
+
+    body { padding-top: var(--nav-height); }
+
+    .hero-visual { 
+      border-radius: 16px; 
+      overflow: hidden; 
+      box-shadow: 0 18px 36px rgba(0,0,0,0.35); 
+      transition: transform 0.3s ease; 
+    }
+    .hero-visual img { 
+      border-radius: 16px; 
+      object-fit: cover; 
+      width: 100%; 
+      height: 100%; 
+      display: block; 
+    }
+    .hero-visual:hover { transform: scale(1.02); }
+
+    @media (max-width:900px) { 
+      .hero-inner { grid-template-columns:1fr; text-align:center; gap:1.5rem; }
+      .hero-visual { max-width:100%; aspect-ratio:16/9; border-radius:12px; margin:0 auto; }
+    }
+
+    @media (max-width:480px) { 
+      .hero-visual { aspect-ratio:4/3; }
+      .logo { font-size:1.4rem; }
+    }
+
+    /* Neuralofty chatbot button */
+    .chatbot-button {
+      display:inline-flex; align-items:center; gap:0.5rem;
+      padding:0.85rem 1.8rem; background:var(--accent); color:#000; font-weight:700;
+      border-radius:50px; text-decoration:none; box-shadow:0 8px 20px rgba(192,140,255,0.35);
+      transition:all 0.3s ease;
+      margin-top:1.5rem;
+    }
+    .chatbot-button:hover { transform:translateY(-3px); box-shadow:0 18px 36px rgba(192,140,255,0.45); }
+  </style>
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3MFEC1DTSE"></script>
@@ -37,108 +78,29 @@
     gtag('js', new Date());
     gtag('config', 'G-3MFEC1DTSE');
   </script>
-
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="/css/style.css" />
-
-  <!-- Tiny CSS tweaks for hero & nav -->
-  <style>
-    :root {
-      --nav-height: 64px;
-    }
-
-    body { padding-top: var(--nav-height); }
-
-    nav {
-      height: var(--nav-height);
-      padding: 0.6rem 4%;
-    }
-
-    .nav-container {
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .hero {
-      padding-top: calc(var(--nav-height) + 1.25rem);
-    }
-
-    .hero-inner {
-      gap: 2rem;
-      align-items: start;
-      grid-template-columns: 1fr 480px;
-    }
-
-    .hero-visual {
-      border-radius: 0;
-      overflow: hidden;
-      max-width: 480px;
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      height: auto;
-      box-shadow: 0 18px 36px rgba(0,0,0,0.45);
-      border: 1px solid var(--gray-800);
-      margin-left: auto;
-    }
-
-    .hero-visual img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      border-radius: 0;
-    }
-
-    .hero-content h1 { margin-bottom: 0.6rem; }
-    .hero-subtitle { margin-bottom: 1.25rem; max-width: 540px; }
-
-    @media (max-width: 900px) {
-      .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 1.5rem; }
-      .hero-visual { max-width: 100%; aspect-ratio: 16/9; border-radius: 12px; }
-      .hero { padding-top: calc(var(--nav-height) + 1rem); }
-    }
-
-    @media (max-width: 480px) {
-      .hero-visual { aspect-ratio: 4/3; }
-      .logo { font-size: 1.4rem; }
-    }
-  </style>
 </head>
 
 
+
+
 <body>
-  <!-- Skip link for keyboard users -->
-  <a class="skip-link" href="#main" style="position:absolute;left:-999px;top:auto;z-index:10000;">Skip to main content</a>
 
   <nav>
     <div class="nav-container">
-      <img
-        src="assets/logo.svg"
-        onerror="this.onerror=null; this.src='assets/logo.png';"
-        srcset="assets/logo.png 1x, assets/logo@2x.png 2x"
-        width="40"
-        height="40"
-        alt="Neuraloft logo"
-        class="nav-logo"
-      />
-      <div class="logo">Neuraloft</div>
-
+      <div class="logo-flex">
+        <img src="/assets/logo.svg" onerror="this.src='/assets/logo.png'" width="40" height="40" alt="Neuraloft logo" class="nav-logo" />
+        <div class="logo">Neuraloft</div>
+      </div>
       <ul class="nav-menu" id="navMenu">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="services.html" class="nav-link">Services</a></li>
-        <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="/" class="nav-link active">Home</a></li>
+        <li><a href="/services.html" class="nav-link">Services</a></li>
+        <li><a href="/portfolio.html" class="nav-link">Portfolio</a></li>
+        <li><a href="/contact.html" class="nav-link">Contact</a></li>
       </ul>
+      <button class="mobile-toggle" id="mobileToggle" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+  <span></span><span></span><span></span>
+</button>
 
-      <button
-        class="mobile-toggle"
-        id="mobileToggle"
-        aria-controls="navMenu"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span></span><span></span><span></span>
-      </button>
     </div>
   </nav>
 
@@ -146,62 +108,52 @@
     <section class="hero">
       <div class="hero-inner">
         <div class="hero-content">
-          <p class="hero-kicker">AI • SOFTWARE • AUTOMATION</p>
+          <p class="hero-kicker">AI • SOFTWARE • VIDEO • FREELANCE</p>
           <h1>Neuraloft</h1>
           <p class="hero-subtitle">
-            A modern software studio helping businesses build fast, intelligent, and reliable digital products — from landing pages to AI-powered web apps.
+            Helping startups & businesses grow with AI-powered apps, automation, and professional video editing. Hunt clients on <strong>Upwork</strong>, <strong>Fiverr</strong>, <strong>LinkedIn</strong> — all from one platform.
           </p>
-          <a href="contact.html" class="cta-button">Start Your Project</a>
+          <a href="/contact.html" class="cta-button">Start Your Project →</a>
 
-          <div class="badge-row" style="margin-top:1.25rem;">
-            <div class="badge">🎓 Certified AI, Metaverse &amp; Web3.0 Developer (GIAIC)</div>
-            <div class="badge badge-secondary">🤖 Certified Agentic &amp; Robotic AI Engineer (PIAIC)</div>
+          <!-- Neuralofty chatbot call -->
+          <!-- <a href="#neuralofty" class="chatbot-button">💬 Chat with Neuralofty</a> -->
+
+          <div class="badge-row">
+            <div class="badge">🎓 Certified AI & Web3 Developer (GIAIC)</div>
+            <div class="badge badge-secondary">🤖 Certified Agentic AI Engineer (PIAIC)</div>
+            <div class="badge">🎥 CapCut Pro Video Editor</div>
           </div>
 
-          <p class="mission-text" style="margin-top:1rem;">
-            Our mission: connecting <span>data</span>, <span>intelligence</span>, and <span>creativity</span> — turning ideas into real, measurable digital results.
+          <p class="mission-text">
+            Connecting <span>data</span>, <span>intelligence</span>, and <span>creativity</span> — turning ideas into measurable results for clients worldwide.
           </p>
         </div>
 
-        <div class="hero-visual" aria-hidden="true">
-          <img
-            src="img/banner.png"
-            alt="A developer working in an imaginative, AI-enhanced world with flying code and app logos."
-            class="hero-image"
-            loading="eager"
-          />
+        <div class="hero-visual">
+          <img src="/img/banner.png" alt="AI-enhanced workspace showing development and video editing" loading="eager" />
         </div>
       </div>
     </section>
 
-    <!-- rest of the page remains unchanged -->
     <section class="section">
       <div class="section-inner">
         <div class="section-header">
           <h2 class="section-title">What We Do</h2>
-          <p class="section-subtitle">
-            Neuraloft partners with founders and companies to design, build, and scale intelligent digital products.
-          </p>
+          <p class="section-subtitle">End-to-end digital solutions for businesses & freelancers</p>
         </div>
 
         <div class="card-grid">
           <div class="card">
-            <h3>Product Strategy &amp; Design</h3>
-            <p style="color: var(--gray-300); font-size: 0.95rem;">
-              Clarify your idea, define features that matter, and turn concepts into clean, intuitive interfaces before writing a single line of code.
-            </p>
+            <h3>🚀 MVP & Product Development</h3>
+            <p>Fast, scalable web & mobile apps built with React, Next.js, Node.js, and Flutter.</p>
           </div>
           <div class="card">
-            <h3>Web &amp; Mobile Development</h3>
-            <p style="color: var(--gray-300); font-size: 0.95rem;">
-              Fast, secure, and scalable apps built with modern stacks — optimized for performance, SEO, and a smooth experience on every device.
-            </p>
+            <h3>🤖 AI & Automation</h3>
+            <p>Custom AI agents, chatbots, workflow automation, and OpenAI integrations for smarter workflows.</p>
           </div>
           <div class="card">
-            <h3>AI Automation &amp; Integrations</h3>
-            <p style="color: var(--gray-300); font-size: 0.95rem;">
-              Integrate AI agents, chatbots, and automation into your workflows to reduce manual work and unlock new ways of serving your customers.
-            </p>
+            <h3>🎥 Video Editing & Freelance Services</h3>
+            <p>Professional video editing for TikTok, Reels, YouTube Ads. Freelance client acquisition support for Upwork, Fiverr, and LinkedIn.</p>
           </div>
         </div>
       </div>
@@ -223,13 +175,17 @@
         <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12c0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.4-1.3-5.4-5.9 0-1.3.5-2.4 1.2-3.3-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2 1-.3 2-.4 3-.4s2 .1 3 .4c2.3-1.6 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.9 1.2 2 1.2 3.3 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6C20.6 21.8 24 17.3 24 12c0-6.6-5.4-12-12-12z"/></svg>
       </a>
     </div>
-
     <p>© 2025 Neuraloft. All rights reserved.</p>
-    <p>Contact: <a href="mailto:neuraloft@gmail.com">neuraloft@gmail.com</a> · WhatsApp: <a href="https://wa.me/923432817289" rel="noopener noreferrer">+92&nbsp;343&nbsp;2817289</a></p>
+    <p>Contact: <a href="mailto:neuraloft@gmail.com">neuraloft@gmail.com</a> · WhatsApp: <a href="https://wa.me/923432817289" target="_blank">+92 343 2817289</a></p>
   </footer>
 
-  <script src="js/main.js" defer></script>
+
+ <script src="/js/main.js" defer></script>
+
+  <!-- Neuralofty chatbot script -->
+ <script src="/js/chatbot.js" defer></script>
+
+
+
 </body>
 </html>
- 
-
