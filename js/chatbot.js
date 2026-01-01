@@ -1,4 +1,4 @@
-/* chatbot.js - Neuralofty Mobile-Friendly (Upgraded) */
+/* chatbot.js - Neuralofty Mobile-Friendly (Advanced AI Chatbot) */
 
 (function () {
 
@@ -13,7 +13,7 @@
         </div>
         <div>
           <strong>Neuralofty</strong>
-          <div class="status">● Online • Ready to help</div>
+          <div class="status">● Online • Ready to chat</div>
         </div>
         <div style="margin-left:auto;display:flex;gap:.5rem;align-items:center;">
           <button id="download-log" title="Download full chat log" aria-label="Download log">⬇️</button>
@@ -93,7 +93,9 @@
       CONTACT_EMAIL: 'neuraloft@gmail.com',
       PORTFOLIO_LINK: '/portfolio.html',
       UPWORK_LINK: 'https://www.upwork.com',
-      FIVERR_LINK: 'https://www.fiverr.com'
+      FIVERR_LINK: 'https://www.fiverr.com',
+      PRIVACY_LINK: '/privacy.html',
+      TERMS_LINK: '/terms.html'
     };
 
     const KNOWLEDGE_BASE = {
@@ -107,10 +109,23 @@
       'videos': `We create TikTok, Instagram Reels, and YouTube Shorts using CapCut & Premiere Pro. Hook-first scripts, captions, and A/B thumbnails included.`,
       'portfolio highlights': `Check our live demos: AI Support Chatbot, Landing Pages, SaaS Dashboard. Visit: ${CONFIG.PORTFOLIO_LINK}`,
       'creator': `I am Neuralofty 🤖, your AI assistant for Neuraloft services.`,
-      'language': `I can chat in English, but I'm learning other languages!`
+      'language': `I can chat in English, but I'm learning other languages!`,
+      'privacy': `Read our Privacy Policy here: <a href="${CONFIG.PRIVACY_LINK}">Privacy Policy</a>`,
+      'terms': `Read our Terms & Conditions here: <a href="${CONFIG.TERMS_LINK}">Terms & Conditions</a>`
     };
 
-    const LOG_KEY = 'neuralofty_chat_log_v1';
+    const CHITCHAT_RESPONSES = [
+      { pattern: /\b(hi|hello|hey|greetings)\b/, reply: "Hello! 👋 How are you today?" },
+      { pattern: /\b(how are you|how is your day)\b/, reply: "I'm doing great! Thanks for asking 😊 How about you?" },
+      { pattern: /\b(you are beautiful|you look good|nice)\b/, reply: "Aww, thank you! You're awesome 😄" },
+      { pattern: /\b(what's up|sup|how is it going)\b/, reply: "Just helping awesome people like you! How can I assist today?" },
+      { pattern: /\b(happy|good day|good morning|good afternoon|good evening)\b/, reply: "Hope your day is amazing! 🌟" },
+      { pattern: /\b(thank you|thanks|thx)\b/, reply: "You're welcome! Always happy to help." },
+      { pattern: /\b(help|assist|support)\b/, reply: "Sure! I can help with services, pricing, portfolio, timelines, or any question you have." },
+      { pattern: /\b(how can i reach you|contact)\b/, reply: `You can contact us at <strong>${CONFIG.CONTACT_PHONE}</strong> or <a href="mailto:${CONFIG.CONTACT_EMAIL}">${CONFIG.CONTACT_EMAIL}</a>.` },
+    ];
+
+    const LOG_KEY = 'neuralofty_chat_log_v2';
     function loadLog(){ try { return JSON.parse(localStorage.getItem(LOG_KEY) || '[]'); } catch(e){ return []; } }
     function saveLog(log){ localStorage.setItem(LOG_KEY, JSON.stringify(log)); }
     function logMessage(who, text){ const log = loadLog(); log.push({who, text, ts: new Date().toISOString()}); saveLog(log); }
@@ -132,8 +147,9 @@
     function botReply(raw){
       const user = (raw||'').trim();
       const msg = user.toLowerCase();
-      if (!msg) return "Type a message or 'send mail' to contact us.";
+      if (!msg) return "Type something to start the chat!";
 
+      // Mail flow
       if (mailStep > 0) {
         if (mailStep === 1){ mailData.name = user; mailStep++; return "Got it! Please enter your email:"; }
         if (mailStep === 2){ mailData.email = user; mailStep++; return "Thanks! Now type your message:"; }
@@ -148,18 +164,23 @@
         return "Sure! First, please tell me your name:";
       }
 
-      // check knowledge base
+      // Check chitchat first
+      for (const c of CHITCHAT_RESPONSES){
+        if (c.pattern.test(msg)) return c.reply;
+      }
+
+      // Check knowledge base
       for (const k in KNOWLEDGE_BASE){
         if (msg.includes(k)) return KNOWLEDGE_BASE[k];
       }
 
-      // generic keywords
-      if (/\b(hi|hello|hey|greetings|good morning|good afternoon)\b/.test(msg)) return "Hello! 👋 I can help with pricing, timeline, samples, portfolio links, or 'send mail' to contact us.";
-      if (/\b(contact|phone|number|whatsapp|call me|contact me)\b/.test(msg)) return `You can reach us at: <strong>${CONFIG.CONTACT_PHONE}</strong><br>Email: <a class="chat-link" href="mailto:${CONFIG.CONTACT_EMAIL}">${CONFIG.CONTACT_EMAIL}</a>`;
-      if (/\b(sample|samples|portfolio|work|projects|examples)\b/.test(msg)) return `Live work & examples:<br>• Portfolio: <a class="chat-link" href="${CONFIG.PORTFOLIO_LINK}">${CONFIG.PORTFOLIO_LINK}</a><br>• Upwork: <a class="chat-link" href="${CONFIG.UPWORK_LINK}" target="_blank">Upwork</a><br>• Fiverr: <a class="chat-link" href="${CONFIG.FIVERR_LINK}" target="_blank">Fiverr</a>`;
-      if (/\b(price|cost|how much|quote|estimate)\b/.test(msg)) return "Check our pricing options or share your budget to get suggestions.";
+      // Generic keywords
+      if (/\b(price|cost|how much|quote|estimate)\b/.test(msg)) return "Share your budget, and we can suggest the best option!";
+      if (/\b(sample|portfolio|projects|work)\b/.test(msg)) return `Check our portfolio here: <a href="${CONFIG.PORTFOLIO_LINK}">Portfolio</a>`;
+      if (/\b(privacy|policy)\b/.test(msg)) return KNOWLEDGE_BASE['privacy'];
+      if (/\b(terms|conditions)\b/.test(msg)) return KNOWLEDGE_BASE['terms'];
 
-      return "I didn't understand that. Try 'services', 'timeline', 'tech stack', 'videos', 'portfolio highlights', or 'send mail'.";
+      return "Hmm 🤔 I didn't quite get that. You can ask about services, timeline, pricing, tech stack, videos, portfolio, privacy, terms, or just say hi!";
     }
 
     function sendMessage(){
@@ -203,7 +224,7 @@
     // initial greeting
     (function seedLogOnce(){ 
       const log = loadLog(); 
-      if (!log.length) appendMessage("Hey! I'm <strong>Neuralofty</strong>. Ask me about services, pricing, timelines, tech stack, videos, portfolio, or type 'send mail' to contact us.", 'bot', true);
+      if (!log.length) appendMessage("Hey! I'm <strong>Neuralofty</strong> 🤖. I can chat casually or answer questions about services, pricing, portfolio, timeline, tech stack, videos, privacy, and terms. Try saying 'hi'!", 'bot', true);
     })();
   }
 
