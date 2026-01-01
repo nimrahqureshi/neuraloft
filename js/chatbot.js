@@ -1,5 +1,7 @@
-/* chatbot.js - Neuralofty Mobile-Friendly */
+/* chatbot.js - Neuralofty Mobile-Friendly (Upgraded) */
+
 (function () {
+
   const MARKUP = `
   <div id="neuralofty-chatbot" aria-hidden="false">
     <button id="neuralofty-toggle" aria-label="Open Neuralofty AI Chat">💬<span class="pulse-ring"></span></button>
@@ -63,7 +65,6 @@
     container.innerHTML = MARKUP;
     document.body.appendChild(container);
 
-    // Inject mobile CSS
     const styleEl = document.createElement('style');
     styleEl.textContent = MOBILE_STYLE;
     document.head.appendChild(styleEl);
@@ -85,7 +86,6 @@
     const input = document.getElementById('user-input');
     const messages = document.getElementById('chat-messages');
     const downloadLogBtn = document.getElementById('download-log');
-
     if (!toggle || !chatWindow || !closeBtn || !sendBtn || !input || !messages) return;
 
     const CONFIG = {
@@ -99,7 +99,15 @@
     const KNOWLEDGE_BASE = {
       'what is neuraloft': `Neuraloft builds AI-powered web & mobile apps, automation systems, and short-form video ads. We also help freelancers optimize Upwork/Fiverr gigs.`,
       'services': `We offer: MVP & Product Development, AI & Automation, Web & Mobile apps, UI/UX, Video Editing & Ads (CapCut).`,
-      'how to hire': `To hire: 1) Share a short brief, 2) Budget range, 3) Desired timeline — we’ll respond with a proposal.`
+      'how to hire': `To hire: 1) Share a short brief, 2) Budget range, 3) Desired timeline — we’ll respond with a proposal.`,
+      'timeline': `Typical timelines: Landing pages 1–2 weeks, Small sites/videos 2–5 days, MVPs/chatbots 1–4 weeks depending on complexity.`,
+      'tech stack': `We use React, Next.js, Node.js, Flutter, React Native, Python, OpenAI API, LangChain, CapCut, and Premiere Pro.`,
+      'remote': `Yes! We work with international clients and coordinate across timezones.`,
+      'maintenance': `We offer optional maintenance and ongoing support for apps and video content.`,
+      'videos': `We create TikTok, Instagram Reels, and YouTube Shorts using CapCut & Premiere Pro. Hook-first scripts, captions, and A/B thumbnails included.`,
+      'portfolio highlights': `Check our live demos: AI Support Chatbot, Landing Pages, SaaS Dashboard. Visit: ${CONFIG.PORTFOLIO_LINK}`,
+      'creator': `I am Neuralofty 🤖, your AI assistant for Neuraloft services.`,
+      'language': `I can chat in English, but I'm learning other languages!`
     };
 
     const LOG_KEY = 'neuralofty_chat_log_v1';
@@ -125,6 +133,7 @@
       const user = (raw||'').trim();
       const msg = user.toLowerCase();
       if (!msg) return "Type a message or 'send mail' to contact us.";
+
       if (mailStep > 0) {
         if (mailStep === 1){ mailData.name = user; mailStep++; return "Got it! Please enter your email:"; }
         if (mailStep === 2){ mailData.email = user; mailStep++; return "Thanks! Now type your message:"; }
@@ -139,12 +148,18 @@
         return "Sure! First, please tell me your name:";
       }
 
-      for (const k in KNOWLEDGE_BASE){ if (msg.includes(k)) return KNOWLEDGE_BASE[k]; }
+      // check knowledge base
+      for (const k in KNOWLEDGE_BASE){
+        if (msg.includes(k)) return KNOWLEDGE_BASE[k];
+      }
+
+      // generic keywords
       if (/\b(hi|hello|hey|greetings|good morning|good afternoon)\b/.test(msg)) return "Hello! 👋 I can help with pricing, timeline, samples, portfolio links, or 'send mail' to contact us.";
       if (/\b(contact|phone|number|whatsapp|call me|contact me)\b/.test(msg)) return `You can reach us at: <strong>${CONFIG.CONTACT_PHONE}</strong><br>Email: <a class="chat-link" href="mailto:${CONFIG.CONTACT_EMAIL}">${CONFIG.CONTACT_EMAIL}</a>`;
       if (/\b(sample|samples|portfolio|work|projects|examples)\b/.test(msg)) return `Live work & examples:<br>• Portfolio: <a class="chat-link" href="${CONFIG.PORTFOLIO_LINK}">${CONFIG.PORTFOLIO_LINK}</a><br>• Upwork: <a class="chat-link" href="${CONFIG.UPWORK_LINK}" target="_blank">Upwork</a><br>• Fiverr: <a class="chat-link" href="${CONFIG.FIVERR_LINK}" target="_blank">Fiverr</a>`;
       if (/\b(price|cost|how much|quote|estimate)\b/.test(msg)) return "Check our pricing options or share your budget to get suggestions.";
-      return "I didn't understand that. Try 'services', 'send mail', or 'samples'.";
+
+      return "I didn't understand that. Try 'services', 'timeline', 'tech stack', 'videos', 'portfolio highlights', or 'send mail'.";
     }
 
     function sendMessage(){
@@ -185,10 +200,11 @@
     downloadLogBtn.addEventListener('click', downloadLog);
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && chatWindow.classList.contains('active')) { chatWindow.classList.remove('active'); chatWindow.classList.add('hidden'); } });
 
-    // Seed initial message
+    // initial greeting
     (function seedLogOnce(){ 
       const log = loadLog(); 
-      if (!log.length) appendMessage("Hey! I'm <strong>Neuralofty</strong>. Ask me about services, pricing, timelines, portfolio, or type 'send mail' to contact us.", 'bot', true); 
+      if (!log.length) appendMessage("Hey! I'm <strong>Neuralofty</strong>. Ask me about services, pricing, timelines, tech stack, videos, portfolio, or type 'send mail' to contact us.", 'bot', true);
     })();
   }
+
 })();
