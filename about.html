@@ -1,237 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Neuraloft — AI & Automation Studio</title>
+  <meta name="description" content="Learn more about Neuraloft — an AI-powered software, automation, and video studio helping businesses grow efficiently.">
+  <link rel="canonical" href="https://neuraloft.vercel.app/about.html">
 
-  <meta name="description" content="Learn more about Neuraloft — an AI-powered software, automation, and video studio helping businesses grow efficiently." />
-  <link rel="canonical" href="https://neuraloft.vercel.app/about.html" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="About Neuraloft — AI & Automation Studio">
+  <meta property="og:description" content="Neuraloft builds AI chatbots, automation systems, web apps, and short-form video ads for global clients.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://neuraloft.vercel.app/about.html">
+  <meta property="og:image" content="https://neuraloft.vercel.app/img/banner.png">
 
-  <meta property="og:title" content="About Neuraloft — AI & Automation Studio" />
-  <meta property="og:description" content="Neuraloft builds AI chatbots, automation systems, web apps, and short-form video ads for global clients." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://neuraloft.vercel.app/about.html" />
-  <meta property="og:image" content="https://neuraloft.vercel.app/img/banner.png" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
 
-  <meta name="twitter:card" content="summary_large_image" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/chatbot.css">
 
-  <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="/css/chatbot.css" />
-
-  <link rel="icon" href="/assets/favicon.ico" sizes="any" />
-  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
-  <meta name="theme-color" content="#000000" />
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/favicon.ico">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#000000">
 
   <style>
-    :root { 
-        --nav-height: 70px; 
-        --accent: #c08cff;
+    :root {
+      --nav-height: 70px;
+      --accent: #c08cff;
+      --bg-dark: #0a0a0a;
+      --bg-section: #111;
+      --card-bg: #141414;
+      --card-border: #222;
+      --text-light: #aaa;
+      --text-muted: #666;
     }
 
-    body { 
-        padding-top: var(--nav-height); 
-        background-color: #0a0a0a;
-        color: #fff;
-        line-height: 1.6;
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding-top: var(--nav-height);
+      background: var(--bg-dark);
+      color: #fff;
+      line-height: 1.6;
     }
 
-    /* Professional Navbar Styles */
+    /* NAVBAR */
     nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: var(--nav-height);
-        background: rgba(0, 0, 0, 0.8);
-        backdrop-filter: blur(10px);
-        z-index: 1000;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--nav-height);
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      z-index: 1000;
     }
 
     .nav-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 2rem;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
     }
 
     .logo-flex {
-        display: flex;
-        align-items: center;
-        gap: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
     }
 
     .logo {
-        font-size: 1.5rem;
-        font-weight: 900;
-        letter-spacing: -0.5px;
-        background: linear-gradient(to right, #fff, var(--accent));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+      font-weight: 900;
+      font-size: 1.5rem;
+      background: linear-gradient(to right, #fff, var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .nav-menu {
-        display: flex;
-        gap: 2rem;
-        list-style: none;
+      display: flex;
+      list-style: none;
+      gap: 2rem;
     }
 
     .nav-link {
-        text-decoration: none;
-        color: #aaa;
-        font-weight: 500;
-        transition: 0.3s;
-        font-size: 0.95rem;
+      text-decoration: none;
+      color: var(--text-light);
+      font-weight: 500;
+      transition: 0.3s;
     }
 
-    .nav-link:hover, .nav-link.active {
-        color: var(--accent);
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--accent);
     }
 
-    /* Hero Styling */
-    .hero {
-        padding: 4rem 1rem;
-        text-align: center;
-        background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
-    }
-
-    .hero h1 {
-        font-size: clamp(2.5rem, 5vw, 4rem);
-        font-weight: 900;
-        margin-bottom: 1rem;
-    }
-
-    .hero-subtitle {
-        color: #aaa;
-        max-width: 700px;
-        margin: 0 auto;
-        font-size: 1.1rem;
-    }
-
-    /* Cards & Grid Styling */
-    .section-inner {
-        max-width: 1100px;
-        margin: 4rem auto;
-        padding: 0 2rem;
-    }
-
-    .grid-3 {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-        margin-top: 3rem;
-    }
-
-    .card {
-        background: #141414;
-        border: 1px solid #222;
-        padding: 2.5rem;
-        border-radius: 20px;
-        transition: transform 0.3s ease, border-color 0.3s ease;
-    }
-
-    .card:hover {
-        transform: translateY(-10px);
-        border-color: var(--accent);
-    }
-
-    .card h3 {
-        color: var(--accent);
-        margin-bottom: 1rem;
-        font-size: 1.4rem;
-    }
-
-    /* Team Styling */
-    .team-card {
-        text-align: center;
-    }
-
-    .team-card img {
-        width: 120px;
-        height: 120px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin-bottom: 1.5rem;
-        border: 3px solid #222;
-    }
-
-    /* Footer Styling */
-    footer {
-        padding: 4rem 2rem;
-        border-top: 1px solid #222;
-        text-align: center;
-        background: #050505;
-    }
-
-    .social-links {
-        display: flex;
-        justify-content: center;
-        gap: 1.5rem;
-        margin-bottom: 2rem;
-    }
-
-    .social-link {
-        color: #aaa;
-        transition: 0.3s;
-    }
-
-    .social-link:hover {
-        color: var(--accent);
-        transform: translateY(-3px);
-    }
-
-    /* Mobile Toggle */
     .mobile-toggle {
-        display: none;
-        flex-direction: column;
-        gap: 6px;
-        background: none;
-        border: none;
-        cursor: pointer;
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
     }
 
     .mobile-toggle span {
-        width: 30px;
-        height: 2px;
-        background: #fff;
-        transition: 0.3s;
+      display: block;
+      width: 28px;
+      height: 2px;
+      background: #fff;
+      transition: all 0.3s ease;
     }
 
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 6rem 1rem 4rem;
+      background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+    }
+
+    .hero p.subtitle {
+      color: var(--text-light);
+      max-width: 700px;
+      margin: 1rem auto 0;
+      font-size: 1.1rem;
+    }
+
+    .hero p.label {
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+    }
+
+    /* SECTION */
+    .section-inner {
+      max-width: 1100px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 2rem;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: var(--accent);
+    }
+
+    .card h3 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    /* TEAM */
+    .team-card {
+      text-align: center;
+    }
+
+    .team-card img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid var(--card-border);
+      margin-bottom: 1rem;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #050505;
+      text-align: center;
+      padding: 4rem 2rem;
+      border-top: 1px solid var(--card-border);
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .social-link {
+      color: var(--text-light);
+      transition: 0.3s;
+    }
+
+    .social-link:hover {
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    /* CTA BUTTON */
+    .cta-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #000;
+      padding: 1rem 2.5rem;
+      font-weight: 700;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-3px);
+      opacity: 0.9;
+    }
+
+    /* MOBILE */
     @media (max-width: 900px) {
-        .mobile-toggle { display: flex; }
-        .nav-menu {
-            position: fixed;
-            top: var(--nav-height);
-            left: -100%;
-            width: 100%;
-            height: calc(100vh - var(--nav-height));
-            background: #000;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 4rem;
-            transition: 0.4s;
-        }
-        .nav-menu.active { left: 0; }
+      .mobile-toggle { display: flex; }
+      .nav-menu {
+        position: fixed;
+        top: var(--nav-height);
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - var(--nav-height));
+        background: #000;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 4rem;
+        gap: 2rem;
+        transition: left 0.4s ease;
+      }
+      .nav-menu.active { left: 0; }
     }
+
   </style>
-
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6680596286532864" crossorigin="anonymous"></script>
 </head>
-
 <body>
 
+<!-- NAVBAR -->
 <nav>
   <div class="nav-container">
     <div class="logo-flex">
-      <img src="/assets/logo.png" alt="Neuraloft Logo" class="nav-logo" width="40" height="40" />
+      <img src="/assets/logo.png" alt="Neuraloft Logo" width="40" height="40">
       <span class="logo">Neuraloft</span>
     </div>
     <ul class="nav-menu" id="navMenu">
@@ -248,67 +278,69 @@
   </div>
 </nav>
 
-<main id="main">
+<main>
 
+  <!-- HERO -->
   <section class="hero">
     <div class="section-inner">
-      <p style="color:var(--accent); font-weight:700; letter-spacing: 2px;">OUR JOURNEY</p>
+      <p class="label">OUR JOURNEY</p>
       <h1>About Neuraloft</h1>
-      <p class="hero-subtitle">We are a team of AI engineers, developers, and creatives dedicated to scaling businesses through automation and intelligence.</p>
+      <p class="subtitle">We are a team of AI engineers, developers, and creatives dedicated to scaling businesses through automation and intelligence.</p>
     </div>
   </section>
 
+  <!-- STORY -->
   <section class="section">
-    <div class="section-inner">
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem; align-items: center;">
-        <div>
-            <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Our Story</h2>
-            <p style="color:#ccc; font-size: 1.1rem; margin-bottom: 1rem;">Neuraloft was founded with a vision to bridge the gap between complex AI technology and everyday business growth. We saw startups struggling with manual workflows and decided to build a studio that makes automation accessible.</p>
-            <p style="color:#ccc; font-size: 1.1rem;">Today, we specialize in high-performance AI chatbots, custom SaaS development, and viral video content that helps our clients dominate their niche.</p>
-        </div>
-        <div style="background: #111; border-radius: 20px; padding: 10px; border: 1px solid #333;">
-            <img src="/img/banner.png" alt="About Neuraloft" style="width: 100%; border-radius: 15px; display: block;" />
-        </div>
+    <div class="section-inner" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap:3rem; align-items:center;">
+      <div>
+        <h2>Our Story</h2>
+        <p style="color:#ccc;">Neuraloft was founded to bridge the gap between complex AI technology and business growth. We help startups streamline workflows and scale efficiently.</p>
+        <p style="color:#ccc;">Today, we specialize in AI chatbots, custom SaaS, and video content to help clients dominate their niche.</p>
+      </div>
+      <div style="background: var(--bg-section); border-radius:20px; padding:10px; border:1px solid #333;">
+        <img src="/img/banner.png" alt="About Neuraloft" style="width:100%; border-radius:15px;">
       </div>
     </div>
   </section>
 
+  <!-- MISSION / VISION / VALUES -->
   <section class="section">
     <div class="section-inner">
-      <h2 style="text-align: center; font-size: 2.5rem;">Why Choose Us?</h2>
+      <h2 style="text-align:center;">Why Choose Us?</h2>
       <div class="grid-3">
         <div class="card">
           <h3>Our Mission</h3>
-          <p>To provide AI-powered tools and automation solutions that simplify work and help startups scale faster.</p>
+          <p>Provide AI-powered tools and automation solutions that simplify work and accelerate startup growth.</p>
         </div>
         <div class="card">
           <h3>Our Vision</h3>
-          <p>To become the global leader in Agentic AI solutions for small businesses and independent freelancers.</p>
+          <p>To become the global leader in Agentic AI solutions for small businesses and freelancers.</p>
         </div>
         <div class="card">
           <h3>Our Values</h3>
-          <p>Innovation, integrity, and client success are the core of every line of code we write.</p>
+          <p>Innovation, integrity, and client success are the core of everything we do.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- TEAM -->
   <section class="section">
     <div class="section-inner">
-      <h2 style="text-align: center; font-size: 2.5rem;">Meet the Experts</h2>
+      <h2 style="text-align:center;">Meet the Experts</h2>
       <div class="grid-3">
         <div class="card team-card">
-          <img src="/assets/team/nimrah.jpg" alt="Nimrah Qureshi" />
+          <img src="/assets/team/nimrah.jpg" alt="Nimrah Qureshi">
           <h3>Nimrah Qureshi</h3>
           <p style="color:var(--accent)">Founder & AI Specialist</p>
         </div>
         <div class="card team-card">
-          <img src="/assets/team/dev1.jpg" alt="Ali Khan" />
+          <img src="/assets/team/dev1.jpg" alt="Ali Khan">
           <h3>Ali Khan</h3>
           <p style="color:var(--accent)">Lead Developer</p>
         </div>
         <div class="card team-card">
-          <img src="/assets/team/dev2.jpg" alt="Sara Ahmed" />
+          <img src="/assets/team/dev2.jpg" alt="Sara Ahmed">
           <h3>Sara Ahmed</h3>
           <p style="color:var(--accent)">UI/UX Designer</p>
         </div>
@@ -316,37 +348,26 @@
     </div>
   </section>
 
-  <section class="section" style="background: #000; padding: 6rem 0; border-top: 1px solid #222;">
-    <div class="section-inner" style="text-align: center;">
-      <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Ready to Automate Your Business?</h2>
-      <p style="margin-bottom: 2.5rem; color:#aaa;">Let’s build something extraordinary together.</p>
-      <a href="/contact.html" style="background: var(--accent); color: #000; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.1rem;">Contact Us Now →</a>
-    </div>
+  <!-- CTA -->
+  <section class="section" style="background:#000; text-align:center; padding:6rem 2rem; border-top:1px solid #222;">
+    <h2>Ready to Automate Your Business?</h2>
+    <p style="color:#aaa; margin:1rem 0 2rem;">Let’s build something extraordinary together.</p>
+    <a href="/contact.html" class="cta-btn">Contact Us Now →</a>
   </section>
 
 </main>
 
+<!-- FOOTER -->
 <footer>
-    <div class="social-links">
-      <a href="https://web.facebook.com/..." class="social-link" target="_blank" title="Facebook">
-        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M22.7 0H1.3C.6 0 0 .6 0 1.3v21.3C0 23.4.6 24 1.3 24h11.5v-9.3H9.7v-3.6h3.1V8.3c0-3.1 1.9-4.8 4.6-4.8 1.3 0 2.5.1 2.8.1v3.2h-1.9c-1.5 0-1.8.7-1.8 1.8v2.3h3.6l-.5 3.6h-3.1V24h6.1c.7 0 1.3-.6 1.3-1.3V1.3C24 .6 23.4 0 22.7 0z"/></svg>
-      </a>
-      <a href="https://www.linkedin.com/..." class="social-link" target="_blank" title="LinkedIn">
-        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14C2.2 0 0 2.2 0 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5V5c0-2.8-2.2-5-5-5zM8 19H5V8h3v11zM6.5 6.7C5.5 6.7 4.7 5.9 4.7 5S5.5 3.3 6.5 3.3 8.3 4.1 8.3 5 7.5 6.7 6.5 6.7zM20 19h-3v-5.2c0-1.2 0-2.8-1.7-2.8-1.7 0-2 1.3-2 2.7V19h-3V8h2.8v1.5h.1C13.7 8.6 15 8 16.5 8c3 0 3.5 2 3.5 4.6V19z"/></svg>
-      </a>
-      <a href="https://github.com/..." class="social-link" target="_blank" title="GitHub">
-        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12c0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.4-1.3-5.4-5.9 0-1.3.5-2.4 1.2-3.3-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2 1-.3 2-.4 3-.4s2 .1 3 .4c2.3-1.6 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.9 1.2 2 1.2 3.3 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6C20.6 21.8 24 17.3 24 12c0-6.6-5.4-12-12-12z"/></svg>
-      </a>
-    </div>
-    <p style="color:#666;">© 2026 Neuraloft. All rights reserved.</p>
-    <p style="margin-top:10px;">
-      <a href="/privacy.html" style="color:#888; text-decoration:none;">Privacy</a> | 
-      <a href="/terms.html" style="color:#888; text-decoration:none;">Terms</a>
-    </p>
-    <p style="margin-top:15px; font-size: 0.9rem; color: #888;">
-        Email: <a href="mailto:neuraloft@gmail.com" style="color:var(--accent);">neuraloft@gmail.com</a>
-    </p>
-  </footer>
+  <div class="social-links">
+    <a href="#" class="social-link" target="_blank" title="Facebook">Facebook</a>
+    <a href="#" class="social-link" target="_blank" title="LinkedIn">LinkedIn</a>
+    <a href="#" class="social-link" target="_blank" title="GitHub">GitHub</a>
+  </div>
+  <p style="color:#666;">© 2026 Neuraloft. All rights reserved.</p>
+  <p style="margin-top:10px;"><a href="/privacy.html" style="color:#888; text-decoration:none;">Privacy</a> | <a href="/terms.html" style="color:#888; text-decoration:none;">Terms</a></p>
+  <p style="margin-top:10px; font-size:0.9rem;">Email: <a href="mailto:neuraloft@gmail.com" style="color:var(--accent);">neuraloft@gmail.com</a></p>
+</footer>
 
 <script>
   const mobileToggle = document.getElementById('mobileToggle');
@@ -354,7 +375,6 @@
 
   mobileToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
-    // Animation for hamburger to X
     mobileToggle.classList.toggle('open');
   });
 </script>
@@ -363,14 +383,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
