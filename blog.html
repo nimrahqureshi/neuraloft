@@ -6,25 +6,39 @@
 
   <title>Blog | Neuraloft</title>
   <meta name="description" content="AI, automation, freelancing & startup growth insights by Neuraloft." />
+  <link rel="canonical" href="https://neuraloft.vercel.app/blog.html" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Neuraloft Blog" />
+  <meta property="og:description" content="Actionable insights on AI, automation, freelancing, and startup growth." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://neuraloft.vercel.app/blog.html" />
+  <meta property="og:image" content="https://neuraloft.vercel.app/img/banner.png" />
+  <meta name="twitter:card" content="summary_large_image" />
 
   <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
 
   <!-- CSS -->
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="/css/chatbot.css" />
 
+  <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6680596286532864"
      crossorigin="anonymous"></script>
 </head>
-
 <body>
+
+<!-- Skip link for keyboard users -->
+<a class="skip-link" href="#main">Skip to main content</a>
 
 <!-- ================= NAVBAR ================= -->
 <nav>
   <div class="nav-container">
     <div class="logo-flex">
-      <img src="/assets/logo.png" alt="Neuraloft Logo" class="nav-logo" />
+      <img src="/assets/logo.png" alt="Neuraloft Logo" class="nav-logo" width="40" height="40" />
       <span class="logo">Neuraloft</span>
     </div>
 
@@ -32,14 +46,19 @@
       <li><a href="/" class="nav-link">Home</a></li>
       <li><a href="/services.html" class="nav-link">Services</a></li>
       <li><a href="/portfolio.html" class="nav-link">Portfolio</a></li>
-      <li><a href="/blog.html" class="nav-link active">Blog</a></li>
+      <li><a href="/blog.html" class="nav-link active" aria-current="page">Blog</a></li>
       <li><a href="/about.html" class="nav-link">About</a></li>
       <li><a href="/contact.html" class="nav-link">Contact</a></li>
     </ul>
+
+    <button class="mobile-toggle" id="mobileToggle" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
 <!-- ================= BLOG HERO ================= -->
+<main id="main">
 <section class="section hero">
   <div class="section-inner">
     <h1>Neuraloft Blog</h1>
@@ -56,9 +75,7 @@
     <!-- Blog Card 1 -->
     <article class="card blog-card">
       <h2>
-        <a href="/blog-1.html">
-          How AI Automation Saves 10+ Hours Per Week
-        </a>
+        <a href="/blog-1.html">How AI Automation Saves 10+ Hours Per Week</a>
       </h2>
       <p>
         Discover how AI chatbots and automation tools help freelancers and businesses save time,
@@ -70,9 +87,7 @@
     <!-- Blog Card 2 -->
     <article class="card blog-card">
       <h2>
-        <a href="/blog-2.html">
-          How Freelancers Get Clients Using AI
-        </a>
+        <a href="/blog-2.html">How Freelancers Get Clients Using AI</a>
       </h2>
       <p>
         Learn proven AI-powered strategies freelancers use to get clients on
@@ -84,7 +99,7 @@
   </div>
 </section>
 
-   <!-- Home Page Banner Ad -->
+<!-- ================= Google AdSense Banner ================= -->
 <ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-6680596286532864"
@@ -94,7 +109,6 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-
 
 <!-- ================= CTA ================= -->
 <section class="section cta">
@@ -131,12 +145,16 @@
     </p>
     <p>Contact: <a href="mailto:neuraloft@gmail.com">neuraloft@gmail.com</a> · WhatsApp: <a href="https://wa.me/923432817289" target="_blank">+92 343 2817289</a></p>
   </footer>
+
 <!-- JS -->
 <script src="/js/main.js" defer></script>
 <script src="/js/chatbot.js" defer></script>
 
 </body>
 </html>
+
+
+
 
 
 
