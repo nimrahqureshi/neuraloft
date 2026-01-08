@@ -7,14 +7,12 @@
   <meta name="description" content="Learn more about Neuraloft — an AI-powered software, automation, and video studio helping businesses grow efficiently.">
   <link rel="canonical" href="https://neuraloft.vercel.app/about.html">
 
-  <!-- Open Graph -->
+  <!-- Open Graph / Social Sharing -->
   <meta property="og:title" content="About Neuraloft — AI & Automation Studio">
   <meta property="og:description" content="Neuraloft builds AI chatbots, automation systems, web apps, and short-form video ads for global clients.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://neuraloft.vercel.app/about.html">
   <meta property="og:image" content="https://neuraloft.vercel.app/img/banner.png">
-
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Fonts -->
@@ -22,218 +20,96 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
+  <!-- Styles -->
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/chatbot.css">
-
-  <!-- Favicon -->
-  <link rel="icon" href="/assets/favicon.ico">
+  <link rel="icon" href="/assets/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <meta name="theme-color" content="#000000">
 
   <style>
-    :root {
-      --nav-height: 70px;
+    :root { 
       --accent: #c08cff;
+      --nav-height: 70px;
       --bg-dark: #0a0a0a;
-      --bg-section: #111;
       --card-bg: #141414;
       --card-border: #222;
-      --text-light: #aaa;
-      --text-muted: #666;
     }
 
     body {
-      font-family: 'Inter', sans-serif;
       margin: 0;
       padding-top: var(--nav-height);
-      background: var(--bg-dark);
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-dark);
       color: #fff;
       line-height: 1.6;
     }
 
-    /* NAVBAR */
+    /* Navbar */
     nav {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: var(--nav-height);
-      background: rgba(0,0,0,0.8);
+      background: rgba(0,0,0,0.85);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255,255,255,0.1);
       z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
     }
-
     .nav-container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-
     .logo-flex {
       display: flex;
       align-items: center;
       gap: 0.8rem;
     }
-
     .logo {
       font-weight: 900;
       font-size: 1.5rem;
+      letter-spacing: -0.5px;
       background: linear-gradient(to right, #fff, var(--accent));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-
     .nav-menu {
       display: flex;
-      list-style: none;
       gap: 2rem;
+      list-style: none;
     }
-
     .nav-link {
       text-decoration: none;
-      color: var(--text-light);
+      color: #aaa;
       font-weight: 500;
       transition: 0.3s;
+      font-size: 0.95rem;
     }
-
-    .nav-link:hover,
-    .nav-link.active {
+    .nav-link.active, .nav-link:hover {
       color: var(--accent);
     }
 
+    /* Mobile Toggle */
     .mobile-toggle {
       display: none;
       flex-direction: column;
-      gap: 5px;
+      gap: 6px;
       background: none;
       border: none;
       cursor: pointer;
     }
-
     .mobile-toggle span {
-      display: block;
-      width: 28px;
+      width: 30px;
       height: 2px;
       background: #fff;
-      transition: all 0.3s ease;
-    }
-
-    /* HERO */
-    .hero {
-      text-align: center;
-      padding: 6rem 1rem 4rem;
-      background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
-    }
-
-    .hero p.subtitle {
-      color: var(--text-light);
-      max-width: 700px;
-      margin: 1rem auto 0;
-      font-size: 1.1rem;
-    }
-
-    .hero p.label {
-      color: var(--accent);
-      font-weight: 700;
-      letter-spacing: 2px;
-      margin-bottom: 1rem;
-    }
-
-    /* SECTION */
-    .section-inner {
-      max-width: 1100px;
-      margin: 4rem auto;
-      padding: 0 2rem;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 20px;
-      padding: 2rem;
-      transition: transform 0.3s ease, border-color 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-      border-color: var(--accent);
-    }
-
-    .card h3 {
-      color: var(--accent);
-      margin-bottom: 1rem;
-    }
-
-    /* TEAM */
-    .team-card {
-      text-align: center;
-    }
-
-    .team-card img {
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 3px solid var(--card-border);
-      margin-bottom: 1rem;
-    }
-
-    /* FOOTER */
-    footer {
-      background: #050505;
-      text-align: center;
-      padding: 4rem 2rem;
-      border-top: 1px solid var(--card-border);
-    }
-
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .social-link {
-      color: var(--text-light);
       transition: 0.3s;
     }
-
-    .social-link:hover {
-      color: var(--accent);
-      transform: translateY(-2px);
-    }
-
-    /* CTA BUTTON */
-    .cta-btn {
-      display: inline-block;
-      background: var(--accent);
-      color: #000;
-      padding: 1rem 2.5rem;
-      font-weight: 700;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    .cta-btn:hover {
-      transform: translateY(-3px);
-      opacity: 0.9;
-    }
-
-    /* MOBILE */
     @media (max-width: 900px) {
       .mobile-toggle { display: flex; }
       .nav-menu {
@@ -245,16 +121,117 @@
         background: #000;
         flex-direction: column;
         align-items: center;
-        justify-content: flex-start;
         padding-top: 4rem;
+        transition: 0.4s;
         gap: 2rem;
-        transition: left 0.4s ease;
       }
       .nav-menu.active { left: 0; }
     }
 
+    /* Hero */
+    .hero {
+      padding: 4rem 1rem;
+      text-align: center;
+      background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+    }
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+    .hero-subtitle {
+      color: #aaa;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+    .section-inner {
+      max-width: 1100px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+    }
+
+    /* Grid & Cards */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      padding: 2.5rem;
+      border-radius: 20px;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      border-color: var(--accent);
+    }
+    .card h3 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+    }
+
+    /* Team */
+    .team-card {
+      text-align: center;
+    }
+    .team-card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1.5rem;
+      border: 3px solid var(--card-border);
+    }
+
+    /* Footer */
+    footer {
+      padding: 4rem 2rem;
+      border-top: 1px solid #222;
+      text-align: center;
+      background: #050505;
+    }
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .social-link {
+      color: #aaa;
+      transition: 0.3s;
+    }
+    .social-link:hover {
+      color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    /* CTA Section */
+    .cta {
+      background: #000;
+      padding: 6rem 2rem;
+      text-align: center;
+      border-top: 1px solid #222;
+    }
+    .cta a {
+      background: var(--accent);
+      color: #000;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .cta a:hover { opacity: 0.9; }
+
   </style>
 </head>
+
 <body>
 
 <!-- NAVBAR -->
@@ -283,21 +260,21 @@
   <!-- HERO -->
   <section class="hero">
     <div class="section-inner">
-      <p class="label">OUR JOURNEY</p>
+      <p style="color:var(--accent); font-weight:700; letter-spacing:2px;">OUR JOURNEY</p>
       <h1>About Neuraloft</h1>
-      <p class="subtitle">We are a team of AI engineers, developers, and creatives dedicated to scaling businesses through automation and intelligence.</p>
+      <p class="hero-subtitle">We are AI engineers, developers, and creatives scaling businesses with automation, intelligence, and modern web solutions.</p>
     </div>
   </section>
 
   <!-- STORY -->
   <section class="section">
-    <div class="section-inner" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap:3rem; align-items:center;">
+    <div class="section-inner" style="display: grid; grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); gap:4rem; align-items:center;">
       <div>
-        <h2>Our Story</h2>
-        <p style="color:#ccc;">Neuraloft was founded to bridge the gap between complex AI technology and business growth. We help startups streamline workflows and scale efficiently.</p>
-        <p style="color:#ccc;">Today, we specialize in AI chatbots, custom SaaS, and video content to help clients dominate their niche.</p>
+        <h2 style="font-size:2.5rem; margin-bottom:1.5rem;">Our Story</h2>
+        <p style="color:#ccc; font-size:1.1rem; margin-bottom:1rem;">Neuraloft was founded to bridge the gap between AI technology and business growth. We empower startups and freelancers to scale with automation and intelligence.</p>
+        <p style="color:#ccc; font-size:1.1rem;">We specialize in AI chatbots, SaaS development, automation, and viral video content that helps clients dominate their niche.</p>
       </div>
-      <div style="background: var(--bg-section); border-radius:20px; padding:10px; border:1px solid #333;">
+      <div style="background:#111; border-radius:20px; padding:10px; border:1px solid #333;">
         <img src="/img/banner.png" alt="About Neuraloft" style="width:100%; border-radius:15px;">
       </div>
     </div>
@@ -306,19 +283,19 @@
   <!-- MISSION / VISION / VALUES -->
   <section class="section">
     <div class="section-inner">
-      <h2 style="text-align:center;">Why Choose Us?</h2>
+      <h2 style="text-align:center; font-size:2.5rem;">Why Choose Us?</h2>
       <div class="grid-3">
         <div class="card">
           <h3>Our Mission</h3>
-          <p>Provide AI-powered tools and automation solutions that simplify work and accelerate startup growth.</p>
+          <p>Provide AI-powered tools and automation solutions to simplify work and help startups scale faster.</p>
         </div>
         <div class="card">
           <h3>Our Vision</h3>
-          <p>To become the global leader in Agentic AI solutions for small businesses and freelancers.</p>
+          <p>Become a global leader in Agentic AI solutions for freelancers and small businesses.</p>
         </div>
         <div class="card">
           <h3>Our Values</h3>
-          <p>Innovation, integrity, and client success are the core of everything we do.</p>
+          <p>Innovation, integrity, and client success guide everything we do.</p>
         </div>
       </div>
     </div>
@@ -327,7 +304,7 @@
   <!-- TEAM -->
   <section class="section">
     <div class="section-inner">
-      <h2 style="text-align:center;">Meet the Experts</h2>
+      <h2 style="text-align:center; font-size:2.5rem;">Meet the Experts</h2>
       <div class="grid-3">
         <div class="card team-card">
           <img src="/assets/team/nimrah.jpg" alt="Nimrah Qureshi">
@@ -349,10 +326,10 @@
   </section>
 
   <!-- CTA -->
-  <section class="section" style="background:#000; text-align:center; padding:6rem 2rem; border-top:1px solid #222;">
-    <h2>Ready to Automate Your Business?</h2>
-    <p style="color:#aaa; margin:1rem 0 2rem;">Let’s build something extraordinary together.</p>
-    <a href="/contact.html" class="cta-btn">Contact Us Now →</a>
+  <section class="cta">
+    <h2 style="font-size:2.5rem; margin-bottom:1.5rem;">Ready to Automate Your Business?</h2>
+    <p style="color:#aaa; margin-bottom:2rem;">Let’s build something extraordinary together.</p>
+    <a href="/contact.html">Contact Us Now →</a>
   </section>
 
 </main>
@@ -360,26 +337,31 @@
 <!-- FOOTER -->
 <footer>
   <div class="social-links">
-    <a href="#" class="social-link" target="_blank" title="Facebook">Facebook</a>
-    <a href="#" class="social-link" target="_blank" title="LinkedIn">LinkedIn</a>
-    <a href="#" class="social-link" target="_blank" title="GitHub">GitHub</a>
+    <a href="https://web.facebook.com/..." class="social-link" target="_blank" title="Facebook">Facebook</a>
+    <a href="https://www.linkedin.com/..." class="social-link" target="_blank" title="LinkedIn">LinkedIn</a>
+    <a href="https://github.com/..." class="social-link" target="_blank" title="GitHub">GitHub</a>
   </div>
   <p style="color:#666;">© 2026 Neuraloft. All rights reserved.</p>
-  <p style="margin-top:10px;"><a href="/privacy.html" style="color:#888; text-decoration:none;">Privacy</a> | <a href="/terms.html" style="color:#888; text-decoration:none;">Terms</a></p>
-  <p style="margin-top:10px; font-size:0.9rem;">Email: <a href="mailto:neuraloft@gmail.com" style="color:var(--accent);">neuraloft@gmail.com</a></p>
+  <p style="margin-top:10px;">
+    <a href="/privacy.html" style="color:#888; text-decoration:none;">Privacy</a> | 
+    <a href="/terms.html" style="color:#888; text-decoration:none;">Terms</a>
+  </p>
+  <p style="margin-top:15px; font-size:0.9rem; color:#888;">
+    Email: <a href="mailto:neuraloft@gmail.com" style="color:var(--accent);">neuraloft@gmail.com</a>
+  </p>
 </footer>
 
+<!-- Scripts -->
 <script>
   const mobileToggle = document.getElementById('mobileToggle');
   const navMenu = document.getElementById('navMenu');
-
   mobileToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
     mobileToggle.classList.toggle('open');
   });
 </script>
-
 <script src="/js/chatbot.js" defer></script>
 
 </body>
 </html>
+
