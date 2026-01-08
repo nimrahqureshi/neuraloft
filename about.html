@@ -1,30 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Basic -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us | Neuraloft</title>
-  <meta name="description" content="Learn more about Neuraloft — an AI-powered software and automation studio helping businesses grow efficiently." />
+
+  <!-- SEO -->
+  <meta name="description" content="Learn more about Neuraloft — an AI-powered software, automation, and video studio helping startups and businesses grow efficiently." />
+  <link rel="canonical" href="https://neuraloft.vercel.app/about.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="About Neuraloft — AI & Automation Studio" />
+  <meta property="og:description" content="Neuraloft builds AI chatbots, automation systems, web apps, and short-form video content for global clients." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://neuraloft.vercel.app/about.html" />
+  <meta property="og:image" content="https://neuraloft.vercel.app/img/banner.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
 
   <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
 
   <!-- CSS -->
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="/css/chatbot.css" />
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6680596286532864"
-     crossorigin="anonymous"></script>
 
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <meta name="theme-color" content="#000000" />
+
+  <!-- Google AdSense -->
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6680596286532864"
+    crossorigin="anonymous">
+  </script>
 </head>
+
 <body>
 
 <!-- NAVBAR -->
 <nav>
   <div class="nav-container">
     <div class="logo-flex">
-      <img src="/assets/logo.png" width="40" height="40" alt="Neuraloft logo" class="nav-logo" />
+      <img src="/assets/logo.svg" onerror="this.src='/assets/logo.png'" width="40" height="40" alt="Neuraloft logo" class="nav-logo" />
       <div class="logo">Neuraloft</div>
     </div>
+
     <ul class="nav-menu" id="navMenu">
       <li><a href="/" class="nav-link">Home</a></li>
       <li><a href="/services.html" class="nav-link">Services</a></li>
@@ -33,61 +59,107 @@
       <li><a href="/about.html" class="nav-link active">About</a></li>
       <li><a href="/contact.html" class="nav-link">Contact</a></li>
     </ul>
+
+    <button class="mobile-toggle" id="mobileToggle" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
-<!-- MAIN CONTENT -->
-<main class="section">
-  <div class="section-inner">
-    <h1>About Neuraloft</h1>
+<!-- MAIN -->
+<main id="main">
+  <section class="section" style="padding-top:7rem;">
+    <div class="section-inner">
 
-    <p>
-      Neuraloft is an AI-powered software and automation studio helping startups, creators,
-      and small businesses grow through modern technology.
-    </p>
+      <div class="section-header">
+        <h1 class="section-title">About Neuraloft</h1>
+        <p class="section-subtitle">
+          AI-powered software, automation & video studio built for real business growth.
+        </p>
+      </div>
 
-    <h2>What We Do</h2>
-    <ul>
-      <li>🤖 AI chatbots & conversational assistants</li>
-      <li>⚙️ Business automation & workflows</li>
-      <li>💻 Full-stack web applications</li>
-      <li>🎥 Short-form video editing for digital growth</li>
-    </ul>
+      <div class="card-grid">
+        <div class="card">
+          <h3>🚀 Who We Are</h3>
+          <p>
+            Neuraloft is a modern digital studio focused on AI solutions, automation systems,
+            full-stack development, and short-form video production for startups and creators.
+          </p>
+        </div>
 
-    <p>
-      Our mission is simple: <strong>reduce manual work, save time, and help businesses scale
-      efficiently using AI.</strong>
-    </p>
+        <div class="card">
+          <h3>🤖 What We Do</h3>
+          <ul>
+            <li>AI chatbots & intelligent agents</li>
+            <li>Workflow automation & integrations</li>
+            <li>Web & mobile application development</li>
+            <li>Short-form video ads & edits</li>
+          </ul>
+        </div>
 
-    <p>
-      Neuraloft works with clients worldwide, delivering clean, scalable, and production-ready
-      solutions tailored to real business needs.
-    </p>
+        <div class="card">
+          <h3>🎯 Our Mission</h3>
+          <p>
+            Reduce manual work, save time, and help businesses scale efficiently using
+            AI-powered tools and clean, production-ready software.
+          </p>
+        </div>
+      </div>
 
-    <p>
-      Whether you need an AI chatbot, automation system, or modern web application,
-      Neuraloft is here to help you turn ideas into results.
-    </p>
-<!-- Home Page Banner Ad -->
-   <ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-6680596286532864"
-     data-ad-slot="5433414138"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-   <script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-   </script>
-    <h2>Contact</h2>
-    <p>
-      📧 Email: <a href="mailto:neuraloft@gmail.com">neuraloft@gmail.com</a><br>
-      🌐 Website: <a href="https://neuraloft.vercel.app" target="_blank">https://neuraloft.vercel.app</a>
-    </p>
-  </div>
+      <!-- Ad -->
+      <div style="margin:2rem 0;">
+        <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-6680596286532864"
+          data-ad-slot="5433414138"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+
+      <div class="section-header">
+        <h2 class="section-title">Why Choose Neuraloft?</h2>
+        <p class="section-subtitle">
+          Practical solutions, clear communication, and global remote delivery.
+        </p>
+      </div>
+
+      <div class="card-grid">
+        <div class="card">
+          <h3>🌍 Global Clients</h3>
+          <p>Remote-first, timezone-aware collaboration with international clients.</p>
+        </div>
+
+        <div class="card">
+          <h3>🧠 AI-First Mindset</h3>
+          <p>We design systems that think, automate, and scale with your business.</p>
+        </div>
+
+        <div class="card">
+          <h3>⚡ Fast & Reliable</h3>
+          <p>Clean code, fast delivery, and production-ready handover.</p>
+        </div>
+      </div>
+
+      <div class="section-header" style="margin-top:3rem;">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-subtitle">
+          Let’s turn your idea into a working product.
+        </p>
+        <p>
+          📧 <a href="mailto:neuraloft@gmail.com">neuraloft@gmail.com</a><br />
+          🌐 <a href="https://neuraloft.vercel.app" target="_blank">https://neuraloft.vercel.app</a>
+        </p>
+      </div>
+
+    </div>
+  </section>
 </main>
 
 <!-- FOOTER -->
-  <footer>
+<footer>
     <div class="social-links">
       <a href="https://web.facebook.com/people/Neuraloft-Neuraloft/pfbid0y9fBskYiPfh8YRUHNAdhrtkTTVbBjpKUbpguqTvchZhpxfjrPcJ1MrHGGdB3fNKdl/" class="social-link" target="_blank" rel="noopener noreferrer" title="Facebook">
         <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M22.7 0H1.3C.6 0 0 .6 0 1.3v21.3C0 23.4.6 24 1.3 24h11.5v-9.3H9.7v-3.6h3.1V8.3c0-3.1 1.9-4.8 4.6-4.8 1.3 0 2.5.1 2.8.1v3.2h-1.9c-1.5 0-1.8.7-1.8 1.8v2.3h3.6l-.5 3.6h-3.1V24h6.1c.7 0 1.3-.6 1.3-1.3V1.3C24 .6 23.4 0 22.7 0z"/></svg>
@@ -110,12 +182,14 @@
     <p>Contact: <a href="mailto:neuraloft@gmail.com">neuraloft@gmail.com</a> · WhatsApp: <a href="https://wa.me/923432817289" target="_blank">+92 343 2817289</a></p>
   </footer>
 
-
+<!-- Scripts -->
 <script src="/js/main.js" defer></script>
 <script src="/js/chatbot.js" defer></script>
 
 </body>
 </html>
+
+
 
 
 
