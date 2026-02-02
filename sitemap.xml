@@ -1,28 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- Home -->
   <url>
     <loc>https://neuraloft.vercel.app/</loc>
-    <lastmod>2025-11-21</lastmod>
+    <lastmod>2026-02-02</lastmod>
     <priority>1.00</priority>
   </url>
 
+  <!-- Services -->
   <url>
     <loc>https://neuraloft.vercel.app/services.html</loc>
-    <lastmod>2025-11-21</lastmod>
+    <lastmod>2026-02-02</lastmod>
     <priority>0.80</priority>
   </url>
 
+  <!-- Portfolio -->
   <url>
     <loc>https://neuraloft.vercel.app/portfolio.html</loc>
-    <lastmod>2025-11-21</lastmod>
+    <lastmod>2026-02-02</lastmod>
     <priority>0.80</priority>
   </url>
 
+  <!-- About -->
+  <url>
+    <loc>https://neuraloft.vercel.app/about.html</loc>
+    <lastmod>2026-02-02</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Blog main -->
+  <url>
+    <loc>https://neuraloft.vercel.app/blog.html</loc>
+    <lastmod>2026-02-02</lastmod>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- Blog posts -->
+  <url>
+    <loc>https://neuraloft.vercel.app/blog-1.html</loc>
+    <lastmod>2026-02-02</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://neuraloft.vercel.app/blog-2.html</loc>
+    <lastmod>2026-02-02</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Contact -->
   <url>
     <loc>https://neuraloft.vercel.app/contact.html</loc>
-    <lastmod>2025-11-21</lastmod>
+    <lastmod>2026-02-02</lastmod>
     <priority>0.80</priority>
+  </url>
+
+  <!-- Terms -->
+  <url>
+    <loc>https://neuraloft.vercel.app/terms.html</loc>
+    <lastmod>2026-02-02</lastmod>
+    <priority>0.60</priority>
+  </url>
+
+  <!-- Privacy -->
+  <url>
+    <loc>https://neuraloft.vercel.app/privacy.html</loc>
+    <lastmod>2026-02-02</lastmod>
+    <priority>0.60</priority>
   </url>
 
 </urlset>
